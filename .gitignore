@@ -1,0 +1,15 @@
+.env
+config.yaml
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+logs/
+.autotoken/
+.tokenflow/
+models.json
+build/
+dist/
+*.egg-info/
+test-pypi.env
+*.log

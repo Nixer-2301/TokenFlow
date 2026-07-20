@@ -1,0 +1,2 @@
+Run `tokenflow init --generate-prompt` to create the 20,000+ token input
+dossier. The generated prompt asks for a response of at least 10,000 tokens.

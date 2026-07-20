@@ -1,0 +1,24 @@
+# TokenFlow writes provider, model, API key, and model prices to models.json.
+# This file contains request and scheduling behavior only.
+prompt_file: "prompt.txt"
+tokenizer: "cl100k_base"
+min_input_tokens: 20000
+
+concurrency: 2
+max_requests: 1
+max_tokens: 10001
+minimum_completion_tokens: 10000
+temperature: 0.7
+
+request_timeout: 600
+first_token_timeout: 20
+max_retries: 1
+backoff_base_seconds: 2
+circuit_breaker_threshold: 2
+global_idle_timeout: 120
+
+# Optional provider-specific fields, for example:
+# extra_body:
+#   reasoning_effort: "none"
+extra_body: {}
+logs_dir: "logs"

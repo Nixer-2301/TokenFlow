@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokenflow-cli"
+version = "0.1.4"
+description = "A full-screen terminal runner for controlled concurrent LLM API workloads"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "TokenFlow contributors" }]
+keywords = ["llm", "token", "openai", "cli", "load-generation"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  "httpx>=0.27,<1",
+  "PyYAML>=6.0,<7",
+  "python-dotenv>=1.0,<2",
+  "tiktoken>=0.7,<1",
+  "textual>=0.70,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "pytest-asyncio>=0.23,<1",
+  "build>=1.2,<2",
+  "twine>=5,<7",
+]
+
+[project.scripts]
+tokenflow = "tokenflow_cli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tokenflow_cli*"]
+
+[tool.setuptools.package-data]
+tokenflow_cli = ["templates/*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
